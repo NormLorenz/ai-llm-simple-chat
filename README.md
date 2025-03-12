@@ -50,6 +50,11 @@ example-one/
      python src/main.py
      ```
 
+5. Test the application:
+     ```sh
+     python -m unittest discover -s tests
+     ```
+
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request.
 
