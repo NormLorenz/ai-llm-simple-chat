@@ -1,13 +1,18 @@
 from flask import Flask, request, render_template
-import openai
+import os
+from openai import OpenAI
 from dotenv import load_dotenv
 
-load_dotenv()  # Load environment variables from .env file
+# Load environment variables in a file called .env
+load_dotenv(override=True)
+
+# Get the OpenAI API key from the environment variable
+api_key = os.getenv('OPENAI_API_KEY')
+
+# Initialize the OpenAI client
+openai = OpenAI()
 
 app = Flask(__name__)
-app.config.from_object('config.Config')
-
-openai.api_key = app.config['OPENAI_API_KEY']
 
 
 @app.route('/')
