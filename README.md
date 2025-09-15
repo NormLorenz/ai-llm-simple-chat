@@ -52,8 +52,7 @@ ai-llm-simple-chat/
      ```
 5. Run the application:
      ```sh
-     cd app
-     uv run main.py
+     uv run run.py
      ```
 
 6. Test the application:
@@ -69,7 +68,8 @@ This project is licensed under the MIT License.
 
 ## Convert pip (using a requirments.txt file) to uv (using a uv.lock file) package manager
 ```ps
-uv init --bare
+uv init
+uv sync
 uv add -r requirements.txt
 uv pip freeze # to list requirments
 uv lock
@@ -84,4 +84,5 @@ New-Item -Path ".\.env" -ItemType File
 ```ps
 rm requirements.txt
 rm config.py
+rm run.py (if it exists)
 ``` 
